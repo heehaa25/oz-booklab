@@ -14,13 +14,11 @@ export default function ReviewListItem({ review, onUpdate, onDelete }) {
   };
 
   return (
-    <div className='w-75 h-70 ml-5 my-5 border border-zinc-200 p-4 rounded-2xl flex flex-col shadow-xl duration-300 hover:scale-105'>
-      <h1 className='text-xl font-semibold line-clamp-1 mt-3'>{title}</h1>
+    <div className='max-w-85 ml-2 my-5 border border-zinc-200 p-4 rounded-2xl shadow-xl duration-300 hover:scale-105 select-none '>
+      <h1 className='text-lg font-semibold line-clamp-1 mt-3'>{title}</h1>
       <p>{rating}</p>
       <p>{dateString}</p>
-      <p className='mt-1 flex-1 min-h-0 overflow-auto pr-1 [scrollbar-gutter:stable]'>
-        {content}
-      </p>
+      <p className='h-30 overflow-scroll'>{content}</p>
       <div className='flex justify-end'>
         <Button variant='ghost' onClick={() => setIsEditModalOpen(true)}>
           수정
