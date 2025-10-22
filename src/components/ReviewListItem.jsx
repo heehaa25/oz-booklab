@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Modal from './Modal';
 import Button from './Button';
 import ReviewForm from './ReviewForm';
+import Rating from './Rating';
 
 export default function ReviewListItem({ review, onUpdate, onDelete }) {
   const { title, rating, content } = review;
@@ -16,7 +17,7 @@ export default function ReviewListItem({ review, onUpdate, onDelete }) {
   return (
     <div className='max-w-85 ml-2 my-5 border border-zinc-200 p-4 rounded-2xl shadow-xl duration-300 hover:scale-105 select-none '>
       <h1 className='text-lg font-semibold line-clamp-1 mt-3'>{title}</h1>
-      <p>{rating}</p>
+      <Rating value={rating} />
       <p>{dateString}</p>
       <p className='h-30 overflow-scroll'>{content}</p>
       <div className='flex justify-end'>
