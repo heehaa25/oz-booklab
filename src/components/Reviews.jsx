@@ -4,6 +4,7 @@ import ReviewList from './ReviewList';
 import Modal from './Modal';
 import Button from './Button';
 import Input from './Input';
+import ReviewForm from './ReviewForm';
 
 export default function Reviews() {
   const [items, setItems] = useState(mockItems);
@@ -19,6 +20,17 @@ export default function Reviews() {
 
   const handleKeywordChange = (e) => setKeyword(e.target.value);
 
+  const handleCreate = (data) => {
+    const now = new Date();
+    const newItem = {
+      id: items.length + 1,
+      ...data,
+      createdAt: now.valueOf(),
+      updatedAt: now.valueOf(),
+    };
+    setItems([newItem, ...items]);
+    setIsOpen(false);
+  };
   const handleDelete = (id) => {
     const nextItems = items.filter((item) => item.id !== id);
     setItems(nextItems);
@@ -67,6 +79,7 @@ export default function Reviews() {
       </div>
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <h2 className='text-xl'>리뷰 작성</h2>
+        <ReviewForm onSubmit={handleCreate} />
       </Modal>
       <ReviewList
         reviews={resultItems}
