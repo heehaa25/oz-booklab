@@ -1,10 +1,15 @@
 import ReviewListItem from './ReviewListItem';
 
-export default function ReviewList({ reviews }) {
+export default function ReviewList({ reviews, onUpdate, onDelete }) {
   return (
-    <ul>
+    <ul className='flex'>
       {reviews.map((review) => (
-        <ReviewListItem key={review.id} review={review} />
+        <ReviewListItem
+          key={review.id}
+          review={review}
+          onUpdate={onUpdate}
+          onDelete={onDelete}
+        />
       ))}
     </ul>
   );
