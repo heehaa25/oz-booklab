@@ -2,6 +2,7 @@
 
 @theme {
   --color-brand: #26828c;
+  --modal-z-index: 1000;
 }
 
 body {
