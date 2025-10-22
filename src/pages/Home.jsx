@@ -123,24 +123,24 @@ function ReviewFlowTour() {
                       </p>
 
                       {/* 폼 미리보기 (disabled) */}
-                      <div className='mt-4 ml-60'>
+                      <div className='max-w-200 mx-auto mt-4 px-4 sm:px-6 lg:px-8'>
                         <h2 className='text-xl mb-3'>리뷰 작성</h2>
-                        <div className=' grid gap-4 md:grid-cols-2'>
+                        <div className='flex grow gap-2.5 mb-2 '>
                           <Input
                             disabled
                             defaultValue='도서 제목을 입력하세요.'
-                            className='w-full h-10 rounded-md mb-2'
+                            className='flex grow h-10 rounded-md'
                           />
                           <Stars />
                         </div>
                         <Textarea
                           disabled
                           defaultValue='내용을 입력하세요.'
-                          className='min-h-[96px] w-130'
+                          className='min-h-24 w-full'
                         />
-                        <span className='block w-130 text-center text-sm rounded-lg py-2 text-white bg-brand'>
+                        <div className='w-full sm:w-auto text-center text-sm rounded-lg py-2 mt-3 text-gray-50 bg-brand'>
                           작성 완료
-                        </span>
+                        </div>
                       </div>
                     </>
                   )}
