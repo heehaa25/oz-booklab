@@ -3,13 +3,21 @@ import mockItems from '../data/mock.json';
 import ReviewList from './ReviewList';
 import Modal from './Modal';
 import Button from './Button';
+import Input from './Input';
 
 export default function Reviews() {
   const [items, setItems] = useState(mockItems);
   const [order, setOrder] = useState('createdAt');
   const [isOpen, setIsOpen] = useState(false);
+  const [keyword, setKeyword] = useState('');
 
-  const resultItems = items.sort((a, b) => b[order] - a[order]);
+  const resultItems = items //
+    .sort((a, b) => b[order] - a[order])
+    .filter(
+      (item) => item.title.includes(keyword) || item.content.includes(keyword)
+    );
+
+  const handleKeywordChange = (e) => setKeyword(e.target.value);
 
   const handleDelete = (id) => {
     const nextItems = items.filter((item) => item.id !== id);
@@ -33,6 +41,13 @@ export default function Reviews() {
 
   return (
     <div className='w-full mx-auto max-w-6xl'>
+      <Input
+        type='text'
+        className='w-4/12 ml-5 mt-3'
+        placeholder='🔍  도서 검색'
+        onChange={handleKeywordChange}
+      />
+
       <div className='w-full flex justify-between mt-5'>
         <div className='ml-10 '>
           <Button
