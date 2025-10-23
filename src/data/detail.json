@@ -1,0 +1,27 @@
+{
+  "response": {
+    "request": {
+      "isbn13": "9788936434120"
+    },
+    "detail": [
+      {
+        "book": {
+          "no": 1,
+          "bookname": "소년이 온다 :한강 장편소설 ",
+          "authors": "지은이: 한강",
+          "publisher": "창비",
+          "publication_date": "2014",
+          "publication_year": "2014",
+          "isbn": "8936434128",
+          "isbn13": "9788936434120",
+          "addition_symbol": "03810",
+          "vol": "",
+          "class_no": "813.62",
+          "class_nm": "문학 > 한국문학 > 소설",
+          "description": "섬세한 감수성과 치밀한 문장으로 인간 존재의 본질을 탐구해온 작가 한강의 여섯번째 장편소설. '상처의 구조에 대한 투시와 천착의 서사'를 통해 한강만이 풀어낼 수 있는 방식으로 1980년 5월을 새롭게 조명한다.",
+          "bookImageURL": "http://image.aladin.co.kr/product/4086/97/cover/8936434128_2.jpg"
+        }
+      }
+    ]
+  }
+}
