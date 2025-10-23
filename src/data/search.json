@@ -1,0 +1,332 @@
+{
+  "response": {
+    "request": {
+      "keyword": "해리포터",
+      "pageNo": 1,
+      "pageSize": 20
+    },
+    "numFound": 274,
+    "docs": [
+      {
+        "doc": {
+          "bookname": "해리포터 :마법사의 돌 ",
+          "authors": "J.K. 롤링 지음 ;김혜원 옮김",
+          "publisher": "문학수첩",
+          "publication_year": "2014",
+          "isbn13": "9788983925312",
+          "addition_symbol": "04840",
+          "vol": "1",
+          "class_no": "843.5",
+          "class_nm": "문학 > 영미문학 > 소설",
+          "bookImageURL": "https://bookthumb-phinf.pstatic.net/cover/085/391/08539163.jpg?type=m1&udate=20141215",
+          "bookDtlUrl": "https://data4library.kr/bookV?seq=2667737",
+          "loan_count": "50740"
+        }
+      },
+      {
+        "doc": {
+          "bookname": "해리포터와 아즈카반의 죄수",
+          "authors": "조앤 K. 롤링 지음;김혜원 옮김",
+          "publisher": "문학수첩",
+          "publication_year": "2000",
+          "isbn13": "9788983920720",
+          "addition_symbol": "04840",
+          "vol": "3",
+          "class_no": "843",
+          "class_nm": "문학 > 영미문학 > 소설",
+          "bookImageURL": "https://bookthumb-phinf.pstatic.net/cover/001/795/00179546.jpg?type=m1&udate=20130523",
+          "bookDtlUrl": "https://data4library.kr/bookV?seq=2370314",
+          "loan_count": "49756"
+        }
+      },
+      {
+        "doc": {
+          "bookname": "해리포터와 아즈카반의 죄수",
+          "authors": "조앤 K. 롤링 지음;김혜원 옮김",
+          "publisher": "문학수첩",
+          "publication_year": "2000",
+          "isbn13": "9788983920737",
+          "addition_symbol": "04840",
+          "vol": "3",
+          "class_no": "843",
+          "class_nm": "문학 > 영미문학 > 소설",
+          "bookImageURL": "https://bookthumb-phinf.pstatic.net/cover/001/795/00179547.jpg?type=m1&udate=20130629",
+          "bookDtlUrl": "https://data4library.kr/bookV?seq=2370315",
+          "loan_count": "45210"
+        }
+      },
+      {
+        "doc": {
+          "bookname": "해리포터와 불의 잔",
+          "authors": "조앤 K. 롤링 지음;최인자 [공]옮김",
+          "publisher": "문학수첩",
+          "publication_year": "2000",
+          "isbn13": "9788983920935",
+          "addition_symbol": "04840",
+          "vol": "42",
+          "class_no": "843",
+          "class_nm": "문학 > 영미문학 > 소설",
+          "bookImageURL": "https://bookthumb-phinf.pstatic.net/cover/001/795/00179555.jpg?type=m1&udate=20130629",
+          "bookDtlUrl": "https://data4library.kr/bookV?seq=2370317",
+          "loan_count": "42121"
+        }
+      },
+      {
+        "doc": {
+          "bookname": "해리포터 :마법사의 돌 ",
+          "authors": "J.K. 롤링 지음 ;김혜원 옮김",
+          "publisher": "문학수첩",
+          "publication_year": "2014",
+          "isbn13": "9788983925329",
+          "addition_symbol": "04840",
+          "vol": "2",
+          "class_no": "843.5",
+          "class_nm": "문학 > 영미문학 > 소설",
+          "bookImageURL": "http://image.aladin.co.kr/product/5007/58/cover/8983925329_1.jpg",
+          "bookDtlUrl": "https://data4library.kr/bookV?seq=2649575",
+          "loan_count": "40710"
+        }
+      },
+      {
+        "doc": {
+          "bookname": "해리포터 :비밀의 방 ",
+          "authors": "J.K. 롤링 지음 ;김혜원 옮김",
+          "publisher": "문학수첩",
+          "publication_year": "2014",
+          "isbn13": "9788983925336",
+          "addition_symbol": "04840",
+          "vol": "1",
+          "class_no": "843.5",
+          "class_nm": "문학 > 영미문학 > 소설",
+          "bookImageURL": "https://bookthumb-phinf.pstatic.net/cover/085/391/08539165.jpg?type=m1&udate=20141215",
+          "bookDtlUrl": "https://data4library.kr/bookV?seq=2667738",
+          "loan_count": "38735"
+        }
+      },
+      {
+        "doc": {
+          "bookname": "리버보이 ",
+          "authors": "팀 보울러 지음 ;정해영 옮김",
+          "publisher": "다산책방",
+          "publication_year": "2007",
+          "isbn13": "9788992555487",
+          "addition_symbol": "03830",
+          "vol": "",
+          "class_no": "843",
+          "class_nm": "문학 > 영미문학 > 소설",
+          "bookImageURL": "https://bookthumb-phinf.pstatic.net/cover/032/921/03292149.jpg?type=m1&udate=20130128",
+          "bookDtlUrl": "https://data4library.kr/bookV?seq=2177986",
+          "loan_count": "38065"
+        }
+      },
+      {
+        "doc": {
+          "bookname": "해리포터 :비밀의 방 ",
+          "authors": "J.K. 롤링 지음 ;김혜원 옮김",
+          "publisher": "문학수첩",
+          "publication_year": "2014",
+          "isbn13": "9788983925343",
+          "addition_symbol": "04840",
+          "vol": "2",
+          "class_no": "843.5",
+          "class_nm": "문학 > 영미문학 > 소설",
+          "bookImageURL": "https://bookthumb-phinf.pstatic.net/cover/085/391/08539166.jpg?type=m1&udate=20141215",
+          "bookDtlUrl": "https://data4library.kr/bookV?seq=2667739",
+          "loan_count": "34615"
+        }
+      },
+      {
+        "doc": {
+          "bookname": "해리포터 :아즈카반의 죄수 ",
+          "authors": "J.K. 롤링 지음 ;김혜원 옮김",
+          "publisher": "문학수첩",
+          "publication_year": "2014",
+          "isbn13": "9788983925350",
+          "addition_symbol": "04840",
+          "vol": "1",
+          "class_no": "843.5",
+          "class_nm": "문학 > 영미문학 > 소설",
+          "bookImageURL": "http://image.aladin.co.kr/product/5007/67/cover/8983925353_1.jpg",
+          "bookDtlUrl": "https://data4library.kr/bookV?seq=2823837",
+          "loan_count": "31889"
+        }
+      },
+      {
+        "doc": {
+          "bookname": "우와! 신기한 사탕이다 ",
+          "authors": "글·그림: 미야니시 타츠야 ;옮김: 계일",
+          "publisher": "계수나무",
+          "publication_year": "2009",
+          "isbn13": "9788989654575",
+          "addition_symbol": "77830",
+          "vol": "",
+          "class_no": "833.6",
+          "class_nm": "문학 > 일본문학 > 소설",
+          "bookImageURL": "https://bookthumb-phinf.pstatic.net/cover/061/961/06196193.jpg?type=m1&udate=20150718",
+          "bookDtlUrl": "https://data4library.kr/bookV?seq=1047324",
+          "loan_count": "29646"
+        }
+      },
+      {
+        "doc": {
+          "bookname": "해리포터 :불의 잔 ",
+          "authors": "J.K. 롤링 지음 ;최인자 옮김",
+          "publisher": "문학수첩",
+          "publication_year": "2014",
+          "isbn13": "9788983925374",
+          "addition_symbol": "04840",
+          "vol": "1",
+          "class_no": "843.5",
+          "class_nm": "문학 > 영미문학 > 소설",
+          "bookImageURL": "https://bookthumb-phinf.pstatic.net/cover/085/391/08539182.jpg?type=m1&udate=20141215",
+          "bookDtlUrl": "https://data4library.kr/bookV?seq=2667740",
+          "loan_count": "29152"
+        }
+      },
+      {
+        "doc": {
+          "bookname": "해리포터 :아즈카반의 죄수 ",
+          "authors": "J.K. 롤링 지음 ;김혜원 옮김",
+          "publisher": "문학수첩",
+          "publication_year": "2014",
+          "isbn13": "9788983925367",
+          "addition_symbol": "04840",
+          "vol": "2",
+          "class_no": "843.5",
+          "class_nm": "문학 > 영미문학 > 소설",
+          "bookImageURL": "http://image.aladin.co.kr/product/5007/68/cover/8983925361_1.jpg",
+          "bookDtlUrl": "https://data4library.kr/bookV?seq=2823838",
+          "loan_count": "29013"
+        }
+      },
+      {
+        "doc": {
+          "bookname": "해리포터 :불의 잔 ",
+          "authors": "J.K. 롤링 지음 ;최인자 옮김",
+          "publisher": "문학수첩",
+          "publication_year": "2014",
+          "isbn13": "9788983925381",
+          "addition_symbol": "04840",
+          "vol": "2",
+          "class_no": "843.5",
+          "class_nm": "문학 > 영미문학 > 소설",
+          "bookImageURL": "https://bookthumb-phinf.pstatic.net/cover/085/391/08539183.jpg?type=m1&udate=20141215",
+          "bookDtlUrl": "https://data4library.kr/bookV?seq=2667741",
+          "loan_count": "25239"
+        }
+      },
+      {
+        "doc": {
+          "bookname": "해리포터 :불사조 기사단 ",
+          "authors": "J.K. 롤링 지음 ;최인자 옮김",
+          "publisher": "문학수첩",
+          "publication_year": "2014",
+          "isbn13": "9788983925411",
+          "addition_symbol": "04840",
+          "vol": "1",
+          "class_no": "843.5",
+          "class_nm": "문학 > 영미문학 > 소설",
+          "bookImageURL": "http://image.aladin.co.kr/product/5007/68/cover/8983925418_1.jpg",
+          "bookDtlUrl": "https://data4library.kr/bookV?seq=2823841",
+          "loan_count": "24701"
+        }
+      },
+      {
+        "doc": {
+          "bookname": "초등 완성 매일 영어책 읽기 습관 :영어 자신감과 성적을 가장 확실하게 잡는 4단계 영어 공부법 ",
+          "authors": "이은경 지음",
+          "publisher": "비에이블",
+          "publication_year": "2020",
+          "isbn13": "9791190931151",
+          "addition_symbol": "13590",
+          "vol": "",
+          "class_no": "740.7",
+          "class_nm": "언어 > 영어 > 영어",
+          "bookImageURL": "https://image.aladin.co.kr/product/25351/71/cover/k362633601_1.jpg",
+          "bookDtlUrl": "https://data4library.kr/bookV?seq=5780373",
+          "loan_count": "23511"
+        }
+      },
+      {
+        "doc": {
+          "bookname": "해리포터 :불의 잔 ",
+          "authors": "J.K. 롤링 지음 ;최인자 옮김",
+          "publisher": "문학수첩",
+          "publication_year": "2014",
+          "isbn13": "9788983925398",
+          "addition_symbol": "04840",
+          "vol": "3",
+          "class_no": "843.5",
+          "class_nm": "문학 > 영미문학 > 소설",
+          "bookImageURL": "http://image.aladin.co.kr/product/5007/62/cover/8983925396_1.jpg",
+          "bookDtlUrl": "https://data4library.kr/bookV?seq=2823839",
+          "loan_count": "23252"
+        }
+      },
+      {
+        "doc": {
+          "bookname": "해리포터 :불의 잔 ",
+          "authors": "J.K. 롤링 지음 ;최인자 옮김",
+          "publisher": "문학수첩",
+          "publication_year": "2014",
+          "isbn13": "9788983925404",
+          "addition_symbol": "04840",
+          "vol": "4",
+          "class_no": "843.5",
+          "class_nm": "문학 > 영미문학 > 소설",
+          "bookImageURL": "http://image.aladin.co.kr/product/5007/63/cover/898392540x_1.jpg",
+          "bookDtlUrl": "https://data4library.kr/bookV?seq=2823840",
+          "loan_count": "22758"
+        }
+      },
+      {
+        "doc": {
+          "bookname": "해리포터 :혼혈 왕자 ",
+          "authors": "J.K. 롤링 지음 ;최인자 옮김",
+          "publisher": "문학수첩",
+          "publication_year": "2014",
+          "isbn13": "9788983925466",
+          "addition_symbol": "04840",
+          "vol": "1",
+          "class_no": "843.5",
+          "class_nm": "문학 > 영미문학 > 소설",
+          "bookImageURL": "http://image.aladin.co.kr/product/5007/78/cover/8983925469_1.jpg",
+          "bookDtlUrl": "https://data4library.kr/bookV?seq=2823846",
+          "loan_count": "22423"
+        }
+      },
+      {
+        "doc": {
+          "bookname": "해리포터 :죽음의 성물 ",
+          "authors": "J.K. 롤링 지음 ;최인자 옮김",
+          "publisher": "문학수첩",
+          "publication_year": "2014",
+          "isbn13": "9788983925503",
+          "addition_symbol": "04840",
+          "vol": "1",
+          "class_no": "843.5",
+          "class_nm": "문학 > 영미문학 > 소설",
+          "bookImageURL": "http://image.aladin.co.kr/product/5007/73/cover/8983925507_1.jpg",
+          "bookDtlUrl": "https://data4library.kr/bookV?seq=2823848",
+          "loan_count": "22359"
+        }
+      },
+      {
+        "doc": {
+          "bookname": "해리포터 :불사조 기사단 ",
+          "authors": "J.K. 롤링 지음 ;최인자 옮김",
+          "publisher": "문학수첩",
+          "publication_year": "2014",
+          "isbn13": "9788983925428",
+          "addition_symbol": "04840",
+          "vol": "2",
+          "class_no": "843.5",
+          "class_nm": "문학 > 영미문학 > 소설",
+          "bookImageURL": "http://image.aladin.co.kr/product/5007/71/cover/8983925426_1.jpg",
+          "bookDtlUrl": "https://data4library.kr/bookV?seq=2823842",
+          "loan_count": "22300"
+        }
+      }
+    ]
+  }
+}
