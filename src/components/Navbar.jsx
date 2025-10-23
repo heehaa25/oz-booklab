@@ -36,6 +36,19 @@ export default function Navbar() {
             리뷰
           </NavLink>
         </li>
+
+        <li>
+          <NavLink
+            to='/books'
+            className={({ isActive }) =>
+              `cursor-pointer text-lg transition-colors ${
+                isActive ? 'text-brand' : 'text-zinc-900 hover:text-brand'
+              }`
+            }
+          >
+            인기 도서
+          </NavLink>
+        </li>
       </ul>
     </header>
   );
