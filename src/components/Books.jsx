@@ -1,10 +1,15 @@
 import BookList from './BookList';
 import mockData from '../data/popular.json';
+import { useNavigate } from 'react-router';
 
 export default function Books() {
   const popularBooks = mockData.response.docs;
+  const navigate = useNavigate();
 
-  const handleClick = (id) => console.log(id);
-
-  return <BookList items={popularBooks} onClick={handleClick} />;
+  return (
+    <BookList
+      items={popularBooks}
+      onClick={(book) => navigate(`/books/${book.isbn13}`, { state: { book } })}
+    />
+  );
 }
