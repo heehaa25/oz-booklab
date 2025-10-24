@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from './Button';
 import Input from './Input';
 import Textarea from './Textarea';
 import RatingInput from './RatingInput';
-import mock from '../data/search.json';
+import { useQuery } from '@tanstack/react-query';
+import { getMockSearch } from '../api/bookInfo';
 
 export default function ReviewForm({
   review = {
@@ -18,12 +19,26 @@ export default function ReviewForm({
   const [selectedBook, setSelectedBook] = useState(null);
   const [rating, setRating] = useState(review.rating || 0);
   const [isFocused, setIsFocused] = useState(false);
-  const inputRef = useRef(null);
 
-  const books = mock.response.docs.map((item) => item.doc);
+  const {
+    isLoading,
+    error,
+    data: searchKeyword,
+  } = useQuery({
+    queryKey: ['books', debouncedTitle],
+    queryFn: async () => getMockSearch(), //getBookData(debouncedTitle),
+    enabled,
+    staleTime: 1000 * 60 * 1,
+    gcTime: 1000 * 60 * 1,
+    keepPreviousData: true,
+  });
+
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>something is wrong</p>;
+  console.log('search', searchKeyword);
 
   const uniqueBooks = Array.from(
-    new Map(books.map((book) => [book.bookname, book])).values()
+    new Map(searchKeyword.map((book) => [book.bookname, book])).values()
   );
 
   const norm = (s = '') => s.toLowerCase().trim();
@@ -50,12 +65,6 @@ export default function ReviewForm({
   };
 
   useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, []);
-
-  useEffect(() => {
     setTitle(review?.title ?? '');
     setRating(review?.rating ?? 0);
   }, [review?.title, review?.rating]);
@@ -63,11 +72,11 @@ export default function ReviewForm({
   useEffect(() => {
     if (review?.title) {
       const found =
-        books.find((b) => b.bookname === review.title) ??
+        searchKeyword.find((b) => b.bookname === review.title) ??
         (review?.isbn13 ? books.find((b) => b.isbn13 === review.isbn13) : null);
       setSelectedBook(found ?? null);
     }
-  }, [review?.title, review?.isbn13, books]);
+  }, [review?.title, review?.isbn13, searchKeyword]);
 
   return (
     <form className='flex flex-col gap-3 mt-5' action={submit}>
@@ -81,7 +90,6 @@ export default function ReviewForm({
             onChange={handleSearch}
             onFocus={() => setIsFocused(true)}
             onBlur={() => setTimeout(() => setIsFocused(false), 150)}
-            ref={inputRef}
             required
           />
 

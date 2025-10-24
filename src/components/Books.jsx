@@ -1,15 +1,32 @@
-import BookList from './BookList';
-import mockData from '../data/popular.json';
 import { useNavigate } from 'react-router';
+import { useQuery } from '@tanstack/react-query';
+import { getBookData, getMockData } from '../api/bookInfo';
+import BookList from './BookList';
 
 export default function Books() {
-  const popularBooks = mockData.response.docs;
   const navigate = useNavigate();
+
+  const {
+    isPending,
+    error,
+    data: books,
+  } = useQuery({
+    queryKey: ['books'],
+    queryFn: async () => getMockData(), //getBookData(),
+    staleTime: 1000 * 60 * 5,
+  });
+
+  if (isPending) return <p>Loading...</p>;
+  if (error) return <p>something is wrong</p>;
+
+  const popularBooks = books ?? [];
 
   return (
     <BookList
       items={popularBooks}
-      onClick={(book) => navigate(`/books/${book.isbn13}`, { state: { book } })}
+      onClick={(book) => {
+        navigate(`/books/${book.isbn13}`, { state: { book } });
+      }}
     />
   );
 }
