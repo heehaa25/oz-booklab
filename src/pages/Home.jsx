@@ -100,11 +100,18 @@ function ReviewFlowTour() {
                       <h2 className='text-lg font-semibold'>
                         1. 리뷰 추가하기
                       </h2>
-                      <p className='mt-1 text-sm text-zinc-600'>
-                        헤더의 <b>“리뷰탭”</b>이나 아래의{' '}
-                        <b>“리뷰 작성 바로가기”</b>를 클릭하여 리뷰 페이지로
-                        이동합니다.
-                      </p>
+                      <ul className='mt-2 space-y-1 text-sm text-zinc-600 list-disc list-inside'>
+                        <li className='mt-1 text-sm text-zinc-600'>
+                          헤더의 <b>“리뷰탭”</b>이나 아래의
+                          <b>“리뷰 작성 바로가기”</b>를 클릭하여 리뷰 페이지로
+                          이동합니다.
+                        </li>
+                        <li className='mt-1 text-sm text-zinc-600'>
+                          <b>인기 도서 탭</b>에서 도서를 클릭한 후,
+                          <b>“리뷰 추가하러 가기”</b>를 클릭하여 리뷰 페이지로
+                          이동합니다.
+                        </li>
+                      </ul>
                       <div className='mt-4'>
                         <Button onClick={() => navigate('/reviews')}>
                           리뷰 작성 바로가기
@@ -148,7 +155,7 @@ function ReviewFlowTour() {
                     <>
                       <h2 className='text-lg font-semibold'>3. 리뷰</h2>
                       <p className='mt-1 text-sm text-zinc-600'>
-                        입력한 리뷰는 아래와 같은 카드 형태로 예쁘게 쌓입니다.
+                        입력한 리뷰는 아래와 같은 카드 형태로 추가됩니다.
                       </p>
                       <div className='mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
                         {[1, 2, 3].map((i) => (
