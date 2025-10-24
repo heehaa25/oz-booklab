@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { getMockSearch } from '../api/bookInfo';
+import useDebounce from '../utils/use-debounce';
 import Button from './Button';
 import Input from './Input';
 import Textarea from './Textarea';
 import RatingInput from './RatingInput';
-import { useQuery } from '@tanstack/react-query';
-import { getMockSearch } from '../api/bookInfo';
 
 export default function ReviewForm({
   review = {
@@ -18,43 +19,46 @@ export default function ReviewForm({
   const [title, setTitle] = useState(review?.title ?? '');
   const [selectedBook, setSelectedBook] = useState(null);
   const [rating, setRating] = useState(review.rating || 0);
-  const [isFocused, setIsFocused] = useState(false);
+  const debouncedTitle = useDebounce(title, 400);
 
   const {
     isLoading,
     error,
     data: searchKeyword,
+    refetch,
   } = useQuery({
     queryKey: ['books', debouncedTitle],
     queryFn: async () => getMockSearch(), //getBookData(debouncedTitle),
-    enabled,
-    staleTime: 1000 * 60 * 1,
-    gcTime: 1000 * 60 * 1,
-    keepPreviousData: true,
+    staleTime: 1000 * 60 * 5,
+    gcTime: 1000 * 60 * 5,
+    enabled: debouncedTitle.length >= 2,
   });
 
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>something is wrong</p>;
-  console.log('search', searchKeyword);
-
-  const uniqueBooks = Array.from(
-    new Map(searchKeyword.map((book) => [book.bookname, book])).values()
-  );
+  const uniqueBooks = Array.isArray(searchKeyword)
+    ? Array.from(
+        new Map(searchKeyword.map((book) => [book.bookname, book])).values()
+      )
+    : [];
 
   const norm = (s = '') => s.toLowerCase().trim();
   const filteredBooks = uniqueBooks.filter((book) =>
     norm(book.bookname).includes(norm(title))
   );
 
+  useEffect(() => {
+    if (debouncedTitle.length >= 5) {
+      refetch();
+    }
+  }, [debouncedTitle, refetch]);
+
+  const handleChange = (e) => {
+    setTitle(e.target.value);
+    setSelectedBook(null);
+  };
+
   const handleSelect = (book) => {
     setTitle(book.bookname);
     setSelectedBook(book);
-    setIsFocused(false);
-  };
-
-  const handleSearch = (e) => {
-    setTitle(e.target.value);
-    setSelectedBook(null);
   };
 
   const handleRatingChange = (value) => setRating(value);
@@ -70,13 +74,15 @@ export default function ReviewForm({
   }, [review?.title, review?.rating]);
 
   useEffect(() => {
-    if (review?.title) {
+    if (review?.title && Array.isArray(searchKeyword)) {
       const found =
-        searchKeyword.find((b) => b.bookname === review.title) ??
-        (review?.isbn13 ? books.find((b) => b.isbn13 === review.isbn13) : null);
-      setSelectedBook(found ?? null);
+        searchKeyword.find((b) => b.bookname === review.title) || null;
+      setSelectedBook(found);
     }
-  }, [review?.title, review?.isbn13, searchKeyword]);
+  }, [review?.title, searchKeyword]);
+
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>something is wrong</p>;
 
   return (
     <form className='flex flex-col gap-3 mt-5' action={submit}>
@@ -87,13 +93,11 @@ export default function ReviewForm({
             name='title'
             placeholder='🔍 찾는 도서가 없으면, 입력한 제목이 등록됩니다.'
             value={title}
-            onChange={handleSearch}
-            onFocus={() => setIsFocused(true)}
-            onBlur={() => setTimeout(() => setIsFocused(false), 150)}
+            onChange={handleChange}
             required
           />
 
-          {isFocused && title && !selectedBook && filteredBooks.length > 0 && (
+          {title && !selectedBook && filteredBooks.length > 0 && (
             <div className='absolute top-full left-0 right-0 max-h-40 overflow-y-auto bg-white border rounded shadow-md z-10'>
               {filteredBooks.map((book) => (
                 <div
