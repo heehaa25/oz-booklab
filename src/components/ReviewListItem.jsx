@@ -28,7 +28,11 @@ export default function ReviewListItem({ review, onUpdate, onDelete }) {
           isOpen={isEditModalOpen}
           onClose={() => setIsEditModalOpen(false)}
         >
-          <ReviewForm review={review} onSubmit={handleEditFormSubmit} />
+          <ReviewForm
+            mode='edit'
+            review={review}
+            onSubmit={handleEditFormSubmit}
+          />
         </Modal>
         <Button variant='danger' onClick={() => onDelete(review.id)}>
           삭제

@@ -8,6 +8,7 @@ import Textarea from './Textarea';
 import RatingInput from './RatingInput';
 
 export default function ReviewForm({
+  mode,
   review = {
     title: '',
     imgUrl: '',
@@ -86,6 +87,9 @@ export default function ReviewForm({
 
   return (
     <form className='flex flex-col gap-3 mt-5' action={submit}>
+      <h2 className='text-xl mb-2'>
+        {mode === 'edit' ? '리뷰 수정' : '리뷰 작성'}
+      </h2>
       <div className='flex items-center'>
         <div className='flex flex-col relative w-full'>
           <Input
