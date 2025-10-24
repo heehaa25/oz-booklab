@@ -72,7 +72,7 @@ function ReviewFlowTour() {
             </div>
             {n < 3 && (
               <div
-                className={`h-[2px] w-16 rounded ${
+                className={`h-0.5 w-16 rounded ${
                   step > n ? 'bg-zinc-500' : 'bg-zinc-200'
                 }`}
               />
