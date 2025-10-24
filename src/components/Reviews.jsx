@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import mockItems from '../data/mock.json';
 import ReviewList from './ReviewList';
 import Modal from './Modal';
 import Button from './Button';
 import Input from './Input';
 import ReviewForm from './ReviewForm';
+import mockItems from '../../public/data/mock.json';
 
 export default function Reviews() {
   const [items, setItems] = useState(mockItems);
