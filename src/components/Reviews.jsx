@@ -78,8 +78,7 @@ export default function Reviews() {
         <Button onClick={() => setIsOpen(true)}>리뷰 추가하기</Button>
       </div>
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <h2 className='text-xl'>리뷰 작성</h2>
-        <ReviewForm onSubmit={handleCreate} />
+        <ReviewForm mode='create' onSubmit={handleCreate} />
       </Modal>
       <ReviewList
         reviews={resultItems}
