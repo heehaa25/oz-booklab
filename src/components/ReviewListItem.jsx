@@ -34,7 +34,7 @@ export default function ReviewListItem({ review, onUpdate, onDelete }) {
             onSubmit={handleEditFormSubmit}
           />
         </Modal>
-        <Button variant='danger' onClick={() => onDelete(review.id)}>
+        <Button variant='danger' onClick={() => onDelete(review)}>
           삭제
         </Button>
       </div>
