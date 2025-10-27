@@ -1,13 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReviewList from './ReviewList';
 import Modal from './Modal';
 import Button from './Button';
 import Input from './Input';
 import ReviewForm from './ReviewForm';
-import mockItems from '../../public/data/mock.json';
 
 export default function Reviews() {
-  const [items, setItems] = useState(mockItems);
+  const [items, setItems] = useState(readLocalStorage);
   const [order, setOrder] = useState('createdAt');
   const [isOpen, setIsOpen] = useState(false);
   const [keyword, setKeyword] = useState('');
@@ -31,8 +30,9 @@ export default function Reviews() {
     setItems([newItem, ...items]);
     setIsOpen(false);
   };
-  const handleDelete = (id) => {
-    const nextItems = items.filter((item) => item.id !== id);
+  const handleDelete = (deleted) => {
+    const nextItems = items.filter((item) => item.id !== deleted.id);
+    localStorage.removeItem(deleted);
     setItems(nextItems);
   };
   const handleUpdate = (id, data) => {
@@ -50,6 +50,10 @@ export default function Reviews() {
     ];
     setItems(newItems);
   };
+
+  useEffect(() => {
+    localStorage.setItem('items', JSON.stringify(items));
+  }, [items]);
 
   return (
     <div className='w-full mx-auto max-w-6xl'>
@@ -87,4 +91,9 @@ export default function Reviews() {
       />
     </div>
   );
+}
+
+function readLocalStorage() {
+  const reviews = localStorage.getItem('items');
+  return reviews ? JSON.parse(reviews) : [];
 }
