@@ -4,6 +4,7 @@ import Modal from './Modal';
 import Button from './Button';
 import Input from './Input';
 import ReviewForm from './ReviewForm';
+import useDebounce from '../utils/use-debounce';
 
 export default function Reviews() {
   const [items, setItems] = useState(readLocalStorage);
@@ -11,10 +12,14 @@ export default function Reviews() {
   const [isOpen, setIsOpen] = useState(false);
   const [keyword, setKeyword] = useState('');
 
+  const debouncedKeyword = useDebounce(keyword, 500);
+
   const resultItems = items //
     .sort((a, b) => b[order] - a[order])
     .filter(
-      (item) => item.title.includes(keyword) || item.content.includes(keyword)
+      (item) =>
+        item.title.includes(debouncedKeyword) ||
+        item.content.includes(debouncedKeyword)
     );
 
   const handleKeywordChange = (e) => setKeyword(e.target.value);
