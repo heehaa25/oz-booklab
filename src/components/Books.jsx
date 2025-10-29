@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router';
 import { useQuery } from '@tanstack/react-query';
-import { getBookData, getMockData } from '../api/bookInfo';
+import { getBookData } from '../api/bookInfo';
 import BookList from './BookList';
 
 export default function Books() {
@@ -12,7 +12,7 @@ export default function Books() {
     data: books,
   } = useQuery({
     queryKey: ['books'],
-    queryFn: async () => getMockData(), //getBookData(),
+    queryFn: async () => getBookData(),
     staleTime: 1000 * 60 * 5,
   });
 

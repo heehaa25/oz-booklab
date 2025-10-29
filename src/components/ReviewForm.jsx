@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { getMockSearch } from '../api/bookInfo';
+import { getSearch } from '../api/bookInfo';
 import useDebounce from '../utils/use-debounce';
 import Button from './Button';
 import Input from './Input';
@@ -20,7 +20,7 @@ export default function ReviewForm({
   const [title, setTitle] = useState(review?.title ?? '');
   const [selectedBook, setSelectedBook] = useState(null);
   const [rating, setRating] = useState(review.rating || 0);
-  const debouncedTitle = useDebounce(title, 400);
+  const debouncedTitle = useDebounce(title, 300);
 
   const {
     isLoading,
@@ -29,7 +29,7 @@ export default function ReviewForm({
     refetch,
   } = useQuery({
     queryKey: ['books', debouncedTitle],
-    queryFn: async () => getMockSearch(), //getBookData(debouncedTitle),
+    queryFn: async () => getSearch(debouncedTitle),
     staleTime: 1000 * 60 * 5,
     gcTime: 1000 * 60 * 5,
     enabled: debouncedTitle.length >= 2,
@@ -37,7 +37,7 @@ export default function ReviewForm({
 
   const uniqueBooks = Array.isArray(searchKeyword)
     ? Array.from(
-        new Map(searchKeyword.map((book) => [book.bookname, book])).values()
+        new Map(searchKeyword.map((book) => [book.isbn13, book])).values()
       )
     : [];
 
