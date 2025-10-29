@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from 'react-router';
 import { cleanAuthor, cleanTitle } from '../utils/clean';
 import Button from './Button';
 import { useQuery } from '@tanstack/react-query';
-import { getBookDetail, getMockDetail } from '../api/bookInfo';
+import { getBookDetail } from '../api/bookInfo';
 
 export default function BookDetail() {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ export default function BookDetail() {
     data: detail,
   } = useQuery({
     queryKey: ['bookId'],
-    queryFn: async () => getMockDetail(), //getBookDetail(isbn13)
+    queryFn: async () => getBookDetail(isbn13),
     staleTime: 1000 * 60 * 5,
   });
 

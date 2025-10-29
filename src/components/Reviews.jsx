@@ -27,7 +27,7 @@ export default function Reviews() {
   const handleCreate = (data) => {
     const now = new Date();
     const newItem = {
-      id: items.length + 1,
+      id: now.valueOf(),
       ...data,
       createdAt: now.valueOf(),
       updatedAt: now.valueOf(),
