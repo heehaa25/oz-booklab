@@ -14,7 +14,7 @@ export default function BookDetail() {
     error,
     data: detail,
   } = useQuery({
-    queryKey: ['bookId'],
+    queryKey: ['bookId', isbn13],
     queryFn: async () => getBookDetail(isbn13),
     staleTime: 1000 * 60 * 5,
   });
@@ -22,7 +22,6 @@ export default function BookDetail() {
   const title = cleanTitle(bookname);
   const author = cleanAuthor(authors);
 
-  if (isPending) return <p>Loading...</p>;
   if (error) return <p>something is wrong</p>;
 
   return (
@@ -31,7 +30,11 @@ export default function BookDetail() {
       <section className='flex flex-wrap gap-2 flex-1 min-w-[250px]'>
         <h1 className='text-2xl basis-full'>{title}</h1>
         <p className='text-gray-700 basis-full'>{author}</p>
-        <p className='basis-full '>{detail}</p>
+        {isPending ? (
+          <div className='spinner mx-auto max-w-6xl' />
+        ) : (
+          <p className='basis-full '>{detail}</p>
+        )}
 
         <Button className='mt-5 ml-auto' onClick={() => navigate('/reviews')}>
           리뷰 추가하러 가기

@@ -16,17 +16,19 @@ export default function Books() {
     staleTime: 1000 * 60 * 5,
   });
 
-  if (isPending) return <p>Loading...</p>;
   if (error) return <p>something is wrong</p>;
 
   const popularBooks = books ?? [];
 
   return (
-    <BookList
-      items={popularBooks}
-      onClick={(book) => {
-        navigate(`/books/${book.isbn13}`, { state: { book } });
-      }}
-    />
+    <>
+      {isPending && <div className='spinner mx-auto max-w-6xl' />}
+      <BookList
+        items={popularBooks}
+        onClick={(book) => {
+          navigate(`/books/${book.isbn13}`, { state: { book } });
+        }}
+      />
+    </>
   );
 }
